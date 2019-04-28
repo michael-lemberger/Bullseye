@@ -6,17 +6,17 @@
 using std::string, std::to_string, std::unordered_set;
 
 string SmartGuesser::guess() {
-	//strategy: guess any possible number
-	string guess = *myset.begin();
-	this->lastGuess = guess;
-	return guess;
+	// //strategy: guess any possible number
+	// string guess = *myset.begin();
+	// this->lastGuess = guess;
+	return "";
 }
 
 void SmartGuesser::startNewGame(uint theLength) {
 	//insert all possible numbers to myset
-	for (int i=0; i<pow(10.0,theLength); ++i){
-		this->myset.insert(numToGuess(i,theLength));
-	}
+	// for (int i=0; i<pow(10.0,theLength); ++i){
+	// 	this->myset.insert(numToGuess(i,theLength));
+	// }
 }
 void SmartGuesser::learn(string response) {
 	unordered_set<string> toRemove;
