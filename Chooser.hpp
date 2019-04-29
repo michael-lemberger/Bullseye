@@ -6,6 +6,6 @@ namespace bullpgia {
 	class Chooser {
 		public:
 			uint length;
-			virtual std::string choose(uint length){return NULL;};
+			virtual std::string choose(uint){return NULL;};
 	};
 }
