@@ -9,8 +9,8 @@ class SmartGuesser: public bullpgia::Guesser {
 
 	public:
 		std::string guess() override;
-		void startNewGame(uint size) override;
-		void learn(std::string s) override;
+		void startNewGame(uint) override;
+		void learn(std::string) override;
 };
 
 
