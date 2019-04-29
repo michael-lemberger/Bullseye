@@ -109,6 +109,14 @@ int main() {
 			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=10, true);  // smarty should always win in at most 10 turns!
 		}
 
+		for (uint i=1; i<100; ++i) {
+		testcase.CHECK_EQUAL(play(randy, smarty, 1, 100)<=10, true);
+		testcase.CHECK_EQUAL(play(randy, smarty, 2, 100)<=10, true);
+		testcase.CHECK_EQUAL(play(randy, smarty, 3, 100)<=10, true);
+		testcase.CHECK_EQUAL(play(randy, smarty, 5, 100)<=10, true);
+		testcase.CHECK_EQUAL(play(randy, smarty, 6, 100)<=10, true);
+		}
+
     grade = testcase.grade();
 	} else {
 		testcase.print_signal(signal);
