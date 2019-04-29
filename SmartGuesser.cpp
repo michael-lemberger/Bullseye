@@ -8,7 +8,7 @@ string SmartGuesser::guess() {
 void SmartGuesser::startNewGame(uint size) {
 	
 }
-void SmartGuesser::learn(string s) {
+void SmartGuesser::learn(std::string) {
 	
 }
 
