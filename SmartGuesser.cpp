@@ -4,7 +4,7 @@
 
 
 using std::string, std::to_string, std::unordered_set;
-
+string SmartGuesser::guess() {
 	return "";
 }
 
