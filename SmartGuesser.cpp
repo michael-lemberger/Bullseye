@@ -5,7 +5,7 @@ string SmartGuesser::guess() {
 	return "";
 }
 
-void SmartGuesser::startNewGame(uint size) {
+void SmartGuesser::startNewGame(uint) {
 	
 }
 void SmartGuesser::learn(std::string) {
