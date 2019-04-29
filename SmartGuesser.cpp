@@ -1,21 +1,14 @@
 #include "SmartGuesser.hpp"
-#include <math.h>
-#include <iostream>
 
-
-using std::string, std::to_string, std::unordered_set;
+using std::string;
 string SmartGuesser::guess() {
 	return "";
 }
 
-void SmartGuesser::startNewGame(uint theLength) {
+void SmartGuesser::startNewGame(uint size) {
 	
 }
-void SmartGuesser::learn(string response) {
+void SmartGuesser::learn(string s) {
 	
 }
 
-//convert number to guess type by padding "0"
-string numToGuess(int num, uint length){
-	return "";
-}
