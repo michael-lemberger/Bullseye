@@ -25,13 +25,15 @@ int main() {
 
 	RandomChooser randy;
 	RandomGuesser guessy;
-	for (uint i=0; i<100; ++i) {
+	for (uint i=0; i<10; ++i) {
 		cout << play(randy, guessy, 2, 100) << endl;  // guesser should often win but sometimes lose.
 	}
 
 	SmartGuesser smarty;
-	for (uint i=0; i<100; ++i) {
+	for (uint i=0; i<10; ++i) {
 		cout << play(randy, smarty, 4, 100) << endl;  // smarty should always win in at most 10 turns!
 	}
+
+	cout<<"fuck!!!!!";
 	return 0;
 }
