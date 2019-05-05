@@ -47,19 +47,19 @@ namespace bullpgia {
   //   }
 		return "";
 	}
-		void check(string a, string b){
-        string nully= "";
+// 		void check(string a, string b){
+//         string nully= "";
 
-			if(a.compare(nully)==0||b.compare(nully)==0)
-				throw invalid_argument("Error: empty!");
+// 			if(a.compare(nully)==0||b.compare(nully)==0)
+// 				throw invalid_argument("Error: empty!");
 
-			for(uint i=0;i<a.length();i++){
-			if(b.at(i)<'0'||b.at(i)>'9')
-				throw invalid_argument("Error: empty!");
+// 			for(uint i=0;i<a.length();i++){
+// 			if(b.at(i)<'0'||b.at(i)>'9')
+// 				throw invalid_argument("Error: empty!");
 
-			if(a[i]<'0'||a[i]>'9'){
-				throw std::invalid_argument("Error: not a number!");
-			}
-		}
-	}
+// 			if(a[i]<'0'||a[i]>'9'){
+// 				throw std::invalid_argument("Error: not a number!");
+// 			}
+// 		}
+// 	}
 	}
