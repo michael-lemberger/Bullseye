@@ -54,7 +54,7 @@ namespace bullpgia {
 
 			for(uint i=0;i<a.length();i++){
 			if(b.at(i)<'0'||b.at(i)>'9')
-				throw invalid_argument("Error: empty!");
+				throw invalid_argument("Error: not a number!");
 
 			if(a[i]<'0'||a[i]>'9'){
 				throw std::invalid_argument("Error: not a number!");

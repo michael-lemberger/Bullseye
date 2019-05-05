@@ -8,7 +8,7 @@ namespace bullpgia {
 		public:
 			uint length;
 			virtual std::string guess(){return NULL;};
-			virtual void startNewGame(uint theLength){length = theLength;};
+			virtual void startNewGame(uint Length){this->length=Length;};
 			virtual void learn(std::string){};
  	};
 }

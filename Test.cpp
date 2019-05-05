@@ -17,7 +17,6 @@ using namespace std;
 #define COMMA ,
 
 using namespace bullpgia;
-
 int main() {
 
 	badkan::TestCase testcase;
@@ -131,3 +130,4 @@ int main() {
 	cout << "Your grade is: "  << grade << endl;
 	return 0;
 }
+
