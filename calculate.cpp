@@ -44,7 +44,7 @@ namespace bullpgia {
 //             }
 //         	std::string s=(to_string(bull)+","+to_string(pgia));
          return "";
-    }
+//     }
 	}
 		void check(string a, string b){
         string nully= "";
