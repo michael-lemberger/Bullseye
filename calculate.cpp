@@ -6,44 +6,44 @@ using std::string, std::to_string;
 using namespace std;
 namespace bullpgia {
 	const string calculateBullAndPgia(const string choosen, const string guess){
-		if(choosen.length() != guess.length()){//if the length are not equals
-        return "0,0";
-		}
+// 		if(choosen.length() != guess.length()){//if the length are not equals
+//         return "0,0";
+// 		}
 
-    else{
-    	check(choosen,guess);
-        uint bull = 0;
-        uint pgia = 0;
- 		char bulled;
- 		bool count[guess.length()];
- 		for(uint i=0;i<guess.length();i++){
- 			count[i]=false;
- 		}
+//     else{
+//     	check(choosen,guess);
+//         uint bull = 0;
+//         uint pgia = 0;
+//  		char bulled;
+//  		bool count[guess.length()];
+//  		for(uint i=0;i<guess.length();i++){
+//  			count[i]=false;
+//  		}
 
-        for(int i = 0; i<choosen.length(); i++){
-        	bool flag=false;
-				if(choosen[i]==guess[i]){
-					bull++;
-					flag=true;
-					bulled=choosen[i];
-				}
+//         for(int i = 0; i<choosen.length(); i++){
+//         	bool flag=false;
+// 				if(choosen[i]==guess[i]){
+// 					bull++;
+// 					flag=true;
+// 					bulled=choosen[i];
+// 				}
 
-				if(!flag){
-                for(int j = 0; j<guess.length(); j++){
-                	if(i!=j){
-                    if(choosen[i]==guess[j]&&choosen[i]!=bulled){
-                    	if(count[j]!=true){
-                            pgia++;
-                            count[j]=true;
-                            break;
-                        }
-                            }
-                    			}
-                	}
-                }
-            }
-        	std::string s=(to_string(bull)+","+to_string(pgia));
-         return s;
+// 				if(!flag){
+//                 for(int j = 0; j<guess.length(); j++){
+//                 	if(i!=j){
+//                     if(choosen[i]==guess[j]&&choosen[i]!=bulled){
+//                     	if(count[j]!=true){
+//                             pgia++;
+//                             count[j]=true;
+//                             break;
+//                         }
+//                             }
+//                     			}
+//                 	}
+//                 }
+//             }
+//         	std::string s=(to_string(bull)+","+to_string(pgia));
+         return "";
     }
 	}
 		void check(string a, string b){
