@@ -23,9 +23,9 @@ void SmartGuesser::startNewGame(uint Length) {
   	Guess+='0';
 }
 
-void SmartGuesser::learn(string reply) {
+void SmartGuesser::learn(string res) {
 	if(tempguess.length()<this->length){
-		int sum = (reply.at(0)-'0');
+		int sum = (res.at(0)-'0');
 		for(int i=0;i<sum;i++)
 			tempguess+=to_string(guess_index);
 		guess_index++;
@@ -38,8 +38,8 @@ void SmartGuesser::learn(string reply) {
 		if(_set.empty())
 			permute(tempguess);
 	
-	char bulls= resply.at(0);//checks how many bulls we have
-	char cows= reply.at(2);//checks how many cows we have
+	char bulls= res.at(0);//checks how many bulls we have
+	char cows= res.at(2);//checks how many cows we have
 	unordered_set<string> NotTheAnswer;
 	for ( auto it = _set.begin(); it != _set.end(); it++){
 		string response = bullpgia::calculateBullAndPgia(*it,Guess);
