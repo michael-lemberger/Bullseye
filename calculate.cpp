@@ -42,7 +42,7 @@ namespace bullpgia {
                 	}
                 }
             }
-        	std::string s=(to_string(bull)+","+to_string(pgia));
+        	string s=(to_string(bull)+","+to_string(pgia));
          return s;
     }
 	}
@@ -57,7 +57,7 @@ namespace bullpgia {
 				throw invalid_argument("Error: not a number!");
 
 			if(a[i]<'0'||a[i]>'9'){
-				throw std::invalid_argument("Error: not a number!");
+				throw invalid_argument("Error: not a number!");
 			}
 		}
 	}
