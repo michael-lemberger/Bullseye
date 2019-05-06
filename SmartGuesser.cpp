@@ -49,7 +49,7 @@ void SmartGuesser::learn(string res) {
 	//removes from _set
 	for ( auto it = NotTheAnswer.begin(); it != NotTheAnswer.end(); it++)
 		_set.erase(*it);
-		this->Guess= *_set.begin();
+	this->Guess= *_set.begin();
 	}
 }
 
