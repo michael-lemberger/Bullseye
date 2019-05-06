@@ -11,11 +11,11 @@
 class SmartGuesser: public bullpgia::Guesser {
 	private:
 		std::string Guess="";
+		std::string tempguess = "";//temporery guess to check witch number are in the secret
 		std::unordered_set<std::string> _set;
-		void Guess_changer();
-		void permute(std::string str); 
-		int guess_index=0;
-		std::string tempguess = "";
+		int guess_index=0;// help varible to go oer all numbers (0-9)
+		void Guess_changer();// help function to change the tempguess
+		void permute(std::string str); // help function to create all prmutations of tempguess
 	public:
 		std::string guess() override;
 		void startNewGame(uint Length) override;
