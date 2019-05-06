@@ -7,7 +7,7 @@
 
 
 /**
- * ConstantGuesser is a guesser that always guesses the same string.
+ * SmartGuesser is a guesser that guesses the secret in maximum 100 turns.
  */
 class SmartGuesser: public bullpgia::Guesser {
 	private:
