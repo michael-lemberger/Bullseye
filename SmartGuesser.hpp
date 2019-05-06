@@ -2,7 +2,6 @@
 #include "Guesser.hpp"
 #include "calculate.hpp"
 #include <unordered_set>
-#include <math.h>
 #include <iostream>
 
 
