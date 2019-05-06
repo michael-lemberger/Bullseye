@@ -14,7 +14,6 @@ class SmartGuesser: public bullpgia::Guesser {
 		std::string Guess="";
 		std::unordered_set<std::string> _set;
 		void Guess_changer();
-		void full_search();
 		void permute(std::string str); 
 		int guess_index=0;
 		std::string tempguess = "";
@@ -23,5 +22,3 @@ class SmartGuesser: public bullpgia::Guesser {
 		void startNewGame(uint Length) override;
 		void learn(std::string res) override;
 };
-
-//std::string numToGuess(int num, uint length);
