@@ -24,15 +24,20 @@ int main() {
 	int signal = setjmp(badkan::longjmp_buffer);
 	if (signal == 0) {
 
+		
+		
 		// BASIC TESTS - DO NOT CHANGE
+		/*--------variables------------*/
 		ConstantChooser c1234{"1234"}, c12345{"12345"}, c9999{"9999"};
 		ConstantGuesser g1234{"1234"}, g12345{"12345"}, g9999{"9999"};
 		ConstantChooser c123{"123"}, c12{"12"}, c11111{"11111"}, c1{"1"}, cnull{"null"};
 		ConstantGuesser g0{"0"}, g43{"43"}, g7777777{"7777777"}, g1{"1"}, gnull{"null"};
-
+		
+		
+		
+		/*-------------calculate------------------*/
 		testcase.setname("Calculate bull and pgia")
 
-		//.CHECK_THROWS(calculateBullAndPgia("shalom","mami"));
 
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","1234"), "4,0")      // 4 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","4321"), "0,4")      // 0 bull, 4 pgia
@@ -53,12 +58,12 @@ int main() {
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","2153"), "0,3")
 		.CHECK_OUTPUT(calculateBullAndPgia("1224","2005"), "0,1")
 		.CHECK_THROWS(calculateBullAndPgia("shalom","mami"))
-		//.CHECK_THROWS(calculateBullAndPgia("shalom","1234"))
-		//.CHECK_THROWS(calculateBullAndPgia("1234","mami"))
+		.CHECK_THROWS(calculateBullAndPgia("shalom","1234"))
+		.CHECK_THROWS(calculateBullAndPgia("1234","mami"))
 		.CHECK_OUTPUT(calculateBullAndPgia("2222","2222"), "4,0")
 		.CHECK_OUTPUT(calculateBullAndPgia("2222","2209"), "2,0")
-		//.CHECK_THROWS(calculateBullAndPgia("","2153"))
-		//.CHECK_THROWS(calculateBullAndPgia("1111",""))
+		.CHECK_THROWS(calculateBullAndPgia("","2153"))
+		.CHECK_THROWS(calculateBullAndPgia("1111",""))
 		.CHECK_THROWS(calculateBullAndPgia("",""));
 
 		testcase.setname("Play with dummy choosers and guessers")
@@ -96,15 +101,19 @@ int main() {
 		.CHECK_EQUAL(play(c123, g7777777, 3, 100), 101)
 		.CHECK_EQUAL(play(c123, g7777777, 7, 100), 0)
 		.CHECK_EQUAL(play(c123, g1, 3, 100), 101);
-		//.CHECK_THROWS(play(c1, gnull, 2, 100))
-		//.CHECK_THROWS(play(cnull, g43, 3, 100))
-		//.CHECK_THROWS(play(cnull, gnull, 4, 100));
+		.CHECK_THROWS(play(c1, gnull, 2, 100))
+		.CHECK_THROWS(play(cnull, g43, 3, 100))
+		.CHECK_THROWS(play(cnull, gnull, 4, 100));
 
+		/*----------change number of tries--------*/
 		for (uint i = 0; i < 100; ++i)
 		{
 			testcase.CHECK_OK(play(c12345, g12345, 4 ,i));
 		}
-
+		
+		
+		
+		/*---------------smart guesser--------------*/
 		testcase.setname("Play with smart guesser");
 		RandomChooser randy;
 		SmartGuesser smarty;
