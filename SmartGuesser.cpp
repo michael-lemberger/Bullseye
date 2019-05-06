@@ -6,20 +6,6 @@
 #include <bits/stdc++.h>
 
 using std::string, std::to_string, std::unordered_set;
-/*
-void SmartGuesser::full_search(){
-//creates any possible guess
-//its sould take 10^(length)
-    uint END = pow(10,this->length);
-    for(int i=0;i<END;++i){
-        string s = to_string(i);
-        while(s.length()<this->length)
-            s=to_string(0)+s;//for any option under 10^(length-1)
-        _set.insert(s);
-		std::cout<<s<<std::endl;
-    }
-}*/
-
 
 string SmartGuesser::guess() {
     //guess any possible option
@@ -33,14 +19,13 @@ void SmartGuesser::startNewGame(uint Length) {
 	tempguess="";
 	guess_index=0;
    this->length=Length;
-  for(int i=0;i<this->length;i++)
-  Guess+='0';
-  //std::cout<<"guess is:"<<Guess<<std::endl;
+  for(int i=0;i<this->length;i++)// initialize first guess with '0'
+  	Guess+='0';
 }
 
-void SmartGuesser::learn(string res) {
+void SmartGuesser::learn(string reply) {
 	if(tempguess.length()<this->length){
-		int sum = (res.at(0)-'0');
+		int sum = (reply.at(0)-'0');
 		for(int i=0;i<sum;i++)
 			tempguess+=to_string(guess_index);
 		guess_index++;
@@ -53,12 +38,11 @@ void SmartGuesser::learn(string res) {
 		if(_set.empty())
 			permute(tempguess);
 	
-	char bulls= res.at(0);//checks how many bulls we have
-	char cows= res.at(2);//checks how many cows we have
+	char bulls= resply.at(0);//checks how many bulls we have
+	char cows= reply.at(2);//checks how many cows we have
 	unordered_set<string> NotTheAnswer;
 	for ( auto it = _set.begin(); it != _set.end(); it++){
-        string response = bullpgia::calculateBullAndPgia(*it,Guess);
-			//std::cout<<"sum= "<<sum<<" tempsum= "<<tempsum<<std::endl;
+		string response = bullpgia::calculateBullAndPgia(*it,Guess);
 		if (response.at(0)!=bulls)
 			NotTheAnswer.insert(*it);	
 	}
@@ -66,7 +50,6 @@ void SmartGuesser::learn(string res) {
 	//removes from _set
 	for ( auto it = NotTheAnswer.begin(); it != NotTheAnswer.end(); it++)
 		_set.erase(*it);
-		//NotTheAnswer.clear();
 		this->Guess= *_set.begin();
 	}
 }
@@ -74,9 +57,7 @@ void SmartGuesser::learn(string res) {
 
 void SmartGuesser::Guess_changer(){
 	for(int i=0;i<this->length;i++){
-	//std::cout<<"guess index is "<<guess_index<<std::endl;
-	Guess.replace(i,i+1,to_string(guess_index));
-	//std::cout<<i<<"guess is:"<<Guess<<std::endl;
+		Guess.replace(i,i+1,to_string(guess_index));
 	}
 }
 
@@ -90,7 +71,6 @@ void SmartGuesser::permute(string str)
     // is next permutation 
     do { 
       _set.insert(str);
-	  //std::cout<<str<<std::endl;
     } while (std::next_permutation(str.begin(), str.end())); 
 } 
 
