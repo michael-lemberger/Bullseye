@@ -5,12 +5,12 @@
 #include <bits/stdc++.h>
 
 using std::string, std::to_string, std::unordered_set;
-
 string SmartGuesser::guess() {
-    //guess any possible option
 	return this->Guess;
 }
 
+
+/*--------------new game-----------*/
 
 void SmartGuesser::startNewGame(uint Length) {
 	Guess="";
@@ -21,6 +21,10 @@ void SmartGuesser::startNewGame(uint Length) {
   for(int i=0;i<this->length;i++)// initialize first guess with '0'
   	Guess+='0';
 }
+
+
+
+/*------improves our guess------*/
 
 void SmartGuesser::learn(string res) {
 	if(tempguess.length()<this->length){
@@ -54,11 +58,18 @@ void SmartGuesser::learn(string res) {
 }
 
 
+
+/*--change the temporary guess--*/
+
 void SmartGuesser::Guess_changer(){
 	for(int i=0;i<this->length;i++){
 		Guess.replace(i,i+1,to_string(guess_index));
 	}
 }
+
+
+
+/*----all possible premutetion of----*/
 
 void SmartGuesser::permute(string str) 
 { 
