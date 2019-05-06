@@ -38,7 +38,6 @@ int main() {
 		/*-------------calculate------------------*/
 		testcase.setname("Calculate bull and pgia")
 
-
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","1234"), "4,0")      // 4 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","4321"), "0,4")      // 0 bull, 4 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","6789"), "0,0")
@@ -66,7 +65,11 @@ int main() {
 		.CHECK_THROWS(calculateBullAndPgia("1111",""))
 		.CHECK_THROWS(calculateBullAndPgia("",""));
 
+		
+		
+		/*---------dummy chooser and guesser------------*/
 		testcase.setname("Play with dummy choosers and guessers")
+		
 		.CHECK_EQUAL(play(c1234, g1234, 4, 100), 1)      // guesser wins in one turn.
 		.CHECK_EQUAL(play(c1234, g9999, 4, 100), 101)    // guesser loses by running out of turns
 		.CHECK_EQUAL(play(c1234, g12345, 4, 100), 101)   // guesser loses technically by making an illegal guess (too long).
@@ -105,6 +108,8 @@ int main() {
 		.CHECK_THROWS(play(cnull, g43, 3, 100))
 		.CHECK_THROWS(play(cnull, gnull, 4, 100));
 
+		
+		
 		/*----------change number of tries--------*/
 		for (uint i = 0; i < 100; ++i)
 		{
@@ -115,6 +120,7 @@ int main() {
 		
 		/*---------------smart guesser--------------*/
 		testcase.setname("Play with smart guesser");
+		
 		RandomChooser randy;
 		SmartGuesser smarty;
 
