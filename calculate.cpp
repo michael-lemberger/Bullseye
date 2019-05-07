@@ -9,9 +9,11 @@ namespace bullpgia {
 
         uint bull = 0;
         uint pgia = 0;
-		uint length= guess.length();
-		if(length>choosen.length())
-			length=choosen.length();
+		uint size= guess.length();
+
+		if(size>choosen.length())
+			size=choosen.length();
+
  		bool f_guess[guess.length()];
  		bool f_chooser[choosen.length()];
 		
@@ -22,7 +24,7 @@ namespace bullpgia {
  			f_guess[i]=false;
  		}
 
- 		for(uint i = 0; i<legnth; i++){
+ 		for(uint i = 0; i<size; i++){
  			if(choosen[i]==guess[i]){
  				f_chooser[i]=true;
  				f_guess[i]=true;
