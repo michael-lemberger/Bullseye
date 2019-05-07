@@ -56,14 +56,11 @@ int main() {
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","1321"), "1,2")
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","2153"), "0,3")
 		.CHECK_OUTPUT(calculateBullAndPgia("1224","2005"), "0,1")
-		.CHECK_THROWS(calculateBullAndPgia("shalom","mami"))
-		.CHECK_THROWS(calculateBullAndPgia("shalom","1234"))
-		.CHECK_THROWS(calculateBullAndPgia("1234","mami"))
 		.CHECK_OUTPUT(calculateBullAndPgia("2222","2222"), "4,0")
 		.CHECK_OUTPUT(calculateBullAndPgia("2222","2209"), "2,0")
-		.CHECK_THROWS(calculateBullAndPgia("","2153"))
-		.CHECK_THROWS(calculateBullAndPgia("1111",""))
-		.CHECK_THROWS(calculateBullAndPgia("",""));
+		.CHECK_OUTPUT(calculateBullAndPgia("","2209"), "0,0")
+		.CHECK_OUTPUT(calculateBullAndPgia("123",""), "0,0")
+		.CHECK_OUTPUT(calculateBullAndPgia("",""), "0,0");
 
 		
 		
@@ -104,9 +101,6 @@ int main() {
 		.CHECK_EQUAL(play(c123, g7777777, 3, 100), 101)
 		.CHECK_EQUAL(play(c123, g7777777, 7, 100), 0)
 		.CHECK_EQUAL(play(c123, g1, 3, 100), 101);
-		.CHECK_THROWS(play(c1, gnull, 2, 100))
-		.CHECK_THROWS(play(cnull, g43, 3, 100))
-		.CHECK_THROWS(play(cnull, gnull, 4, 100));
 
 		
 		
