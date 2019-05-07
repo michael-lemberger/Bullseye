@@ -18,7 +18,7 @@ namespace bullpgia {
  		bool f_chooser[choosen.length()];
 		
  		for(uint i=0;i<choosen.length();i++){
- 			f_guess[i]=false;
+ 			f_chooser[i]=false;
  		}
 		for(uint i=0;i<guess.length();i++){
  			f_guess[i]=false;
