@@ -3,6 +3,5 @@
 #include <string>
 
 namespace bullpgia {
-	const std::string calculateBullAndPgia(const std::string chosen, const std::string guess);	
-
+	const std::string calculateBullAndPgia(const std::string chosen, const std::string guess);//return "num,num"	
 }
